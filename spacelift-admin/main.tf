@@ -1,6 +1,10 @@
 #Create the necessary stacks
 
 resource "spacelift_stack" "vpc-stack" {
+  github_enterprise {
+    namespace = "eminalemdar"
+    id = "github-enterprise-default-integration"
+  }
   administrative               = false
   space_id                     = "root"
   branch                       = "main"
@@ -15,6 +19,10 @@ resource "spacelift_stack" "vpc-stack" {
 }
 
 resource "spacelift_stack" "ec2-stack" {
+  github_enterprise {
+    namespace = "eminalemdar"
+    id = "github-enterprise-default-integration"
+  }
   administrative               = false
   space_id                     = "root"
   branch                       = "main"
@@ -29,6 +37,10 @@ resource "spacelift_stack" "ec2-stack" {
 }
 
 resource "spacelift_stack" "ansible-stack" {
+  github_enterprise {
+    namespace = "eminalemdar"
+    id = "github-enterprise-default-integration"
+  }
     ansible {
         playbook = "playbook.yml"
     }
